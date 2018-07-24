@@ -7,9 +7,9 @@ export default class RateCalculator extends React.Component {
     constructor(props) {
         super(props);
       
-//         this.state = {
+        this.state = {
             
-//         }
+        }
         
     }
   
