@@ -5,6 +5,14 @@ import Output from './output';
 
 export default class RateCalculator extends React.Component {
     constructor(props) {
+<<<<<<< HEAD
+=======
+        super(props);
+      
+        this.state = {
+            
+        }
+>>>>>>> 177613f27d1bd1384879a2fd57a894c4e7535547
         
         super(props);
         this.state = {
