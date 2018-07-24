@@ -4,12 +4,31 @@ import SearchForm from './search-form';
 import CharacterCount from './character-count';
 import CharacterList from './character-list';
 
-export default function LiveSearch(props) {
-    return (
-        <div className="live-search">
-            <SearchForm />
-            <CharacterCount count={props.characters.length} />
-            <CharacterList characters={props.characters} />
-        </div>
-    );
+export default class LiveSearch extends React.Component {
+    constructor(props){
+        super(props);
+        this.state ={
+            searchTerm: ""
+        }
+    }
+
+    changeTerm(searchTerm){
+        console.log({searchTerm});
+        this.setState({searchTerm});
+      }
+    
+    
+    render() {
+        const filteredChar = this.props.characters.filter(char => char.name.toLowerCase().includes(this.state.searchTerm))
+        
+        return (
+            <div className="live-search">
+                <SearchForm onChange={searchTerm => this.changeTerm(searchTerm)}/>
+                <CharacterCount count={filteredChar.length} />
+                <CharacterList characters={filteredChar} />
+            </div>
+        );   
+    }
+
+    
 }
