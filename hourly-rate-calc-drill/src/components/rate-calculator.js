@@ -13,13 +13,13 @@ export default class RateCalculator extends React.Component {
         }
     }
 
-    dayRateMethod() {
+    dayRateMethod(NumberInput) {
         this.setState({
             dayRate : NumberInput
         })
     }
 
-    hoursMethod() {
+    hoursMethod(NumberInput) {
         this.setState({
             hours : NumberInput
         })
